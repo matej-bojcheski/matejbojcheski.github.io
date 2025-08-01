@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>КУЧЕ МАЛО КУЧЕ</title>
+</head>
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="UTF-8">
+
+
+
+
+<body>
+
+<style>
+
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Главен хедер */
+header {
+    background-color: #1a1a1a; 
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #ff4081; /* Роза боја акцент */
+    animation: headerAnimation 2s ease-in-out infinite; /* Мрдање на хедер */
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Мрдај десно */
+    }
+    100% {
+        transform: translateX(0); /* Врати се на почетната позиција */
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff4081; /* Роза боја */
+    text-transform: uppercase;
+}
+
+/* Секција за херо слика и текст */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 30px;
+    text-align: center;
+    animation: introAnimation 3s ease-in-out infinite; /* Мрдање на текст */
+}
+
+@keyframes introAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Мрдај нагоре */
+    }
+    100% {
+        transform: translateY(0); /* Врати се на почетната позиција */
+    }
+}
+
+.intro img {
+    border-radius: 8px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #ff4081; /* Роза рамка */
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.8); /* Светли ефекти на рамката */
+    animation: shakeImage 3s ease-in-out infinite; /* Мрдање на слика */
+}
+
+@keyframes shakeImage {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Мрдај десно */
+    }
+    100% {
+        transform: translateX(0); /* Врати се на почетната позиција */
+    }
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: #ff4081; /* Роза акцент */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Секција за текст */
+.info {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 30px auto;
+    line-height: 1.8;
+    animation: fadeIn 3s ease-in-out; /* Поява на текст */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; /* Претвори ја транспарентноста во целосна */
+    }
+}
+
+.info h2 {
+    font-size: 2.5rem;
+    color: #ff4081;
+    font-weight: bold;
+}
+
+.info p {
+    color: #e0e0e0; /* Сив текст за лесно читање */
+}
+
+/* Стил за картица */
+.card {
+    background-color: #2c2c2c; /* Темно сива */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Картите ќе се зголемуваат кога ќе се ховерат */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Мало зголемување */
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: #ff4081; /* Роза акцент */
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #b3b3b3; /* Сив текст */
+}
+
+/* Секција за футер */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: #ffffff;
+    border-top: 3px solid #ff4081; /* Роза боја акцент */
+    animation: footerAnimation 2s ease-in-out infinite; /* Мрдање на футер */
+}
+
+@keyframes footerAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px); /* Мрдај надолу */
+    }
+    100% {
+        transform: translateY(0); /* Врати се на почетната позиција */
+    }
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Кнопки */
+button {
+    background-color: #ff4081;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff80ab; /* Побига на посветла боја при ховер */
+    transform: scale(1.05);
+}
+
+/* Стилови за линкови */
+a {
+    color: #ff4081;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff80ab;
+}
+}
+
+
+/* Основни стилови */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Темна позадина */
+    color: #ffffff; /* Бел текст */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Главен хедер */
+header {
+    background-color: #1a1a1a; /* Тмурна позадина */
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 3px solid #ff4081; /* Роза боја акцент */
+    animation: headerAnimation 2s ease-in-out infinite; /* Мрдање на хедер */
+}
+
+@keyframes headerAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Мрдај десно */
+    }
+    100% {
+        transform: translateX(0); /* Врати се на почетната позиција */
+    }
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ff4081; /* Роза боја */
+    text-transform: uppercase;
+}
+
+/* Секција за херо слика и текст */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    gap: 30px;
+    text-align: center;
+    animation: introAnimation 3s ease-in-out infinite; /* Мрдање на текст */
+}
+
+@keyframes introAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Мрдај нагоре */
+    }
+    100% {
+        transform: translateY(0); /* Врати се на почетната позиција */
+    }
+}
+
+.intro img {
+    border-radius: 8px;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 5px solid #ff4081; /* Роза рамка */
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.8); /* Светли ефекти на рамката */
+    animation: shakeImage 3s ease-in-out infinite; /* Мрдање на слика */
+}
+
+@keyframes shakeImage {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px); /* Мрдај десно */
+    }
+    100% {
+        transform: translateX(0); /* Врати се на почетната позиција */
+    }
+}
+
+.intro h2 {
+    font-size: 2.5rem;
+    color: #ff4081; /* Роза акцент */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Секција за текст */
+.info {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 30px auto;
+    line-height: 1.8;
+    animation: fadeIn 3s ease-in-out; /* Поява на текст */
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; /* Претвори ја транспарентноста во целосна */
+    }
+}
+
+.info h2 {
+    font-size: 2.5rem;
+    color: #ff4081;
+    font-weight: bold;
+}
+
+.info p {
+    color: #e0e0e0; /* Сив текст за лесно читање */
+}
+
+/* Стил за картица */
+.card {
+    background-color: #2c2c2c; /* Темно сива */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease; /* Картите ќе се зголемуваат кога ќе се ховерат */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Мало зголемување */
+}
+
+.card h3 {
+    font-size: 2rem;
+    color: #ff4081; /* Роза акцент */
+    font-weight: bold;
+}
+
+.card p {
+    font-size: 1.2rem;
+    color: #b3b3b3; /* Сив текст */
+}
+
+/* Секција за футер */
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    color: #ffffff;
+    border-top: 3px solid #ff4081; /* Роза боја акцент */
+    animation: footerAnimation 2s ease-in-out infinite; /* Мрдање на футер */
+}
+
+@keyframes footerAnimation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px); /* Мрдај надолу */
+    }
+    100% {
+        transform: translateY(0); /* Врати се на почетната позиција */
+    }
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Кнопки */
+button {
+    background-color: #ff4081;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff80ab; /* Побига на посветла боја при ховер */
+    transform: scale(1.05);
+}
+
+/* Стилови за линкови */
+a {
+    color: #ff4081;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff80ab;
+}
+/* Основни стилови */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #2980b9); /* Динамичен градиент од темно сино до светло сино */
+    color: #ffffff; /* Бел текст */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+/* Секција со ефекти */
+section {
+    position: relative;
+    background: rgba(255, 255, 255, 0.2); /* Полупровидна бела позадина */
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.7); /* Голема сенка */
+    backdrop-filter: blur(5px); /* Замаглување на позадината */
+}
+
+/* Главен хедер */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Полупровидна позадина */
+    text-align: center;
+    padding: 20px;
+    color: #ff4081; /* Гамерска розова боја */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 3rem;
+    border-radius: 10px;
+}
+
+/* Анимација на позадина */
+@keyframes animateBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+body {
+    animation: animateBackground 10s ease infinite; /* Го преместува градиентот за динамичка позадина */
+    background-size: 300% 300%;
+}
+
+/* Стил за текст */
+h2, p {
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Сенка на текст */
+}
+
+/* Картички */
+.card {
+    background-color: rgba(0, 0, 0, 0.8); /* Темно сива боја */
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Увеличување на картата при ховер */
+}
+
+.card h3 {
+    color: #ff4081;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Додавање на гејмерски ефекти */
+button {
+    background-color: #ff4081;
+    color: #fff;
+    padding: 15px 30px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff80ab; /* Побига на посветла боја при ховер */
+    transform: scale(1.1);
+}
+
+/* Линкови */
+a {
+    color: #ff4081;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: #ff80ab;
+}
+
+/* За футер */
+footer {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-top: 3px solid #ff4081;
+}
+/* Основни стилови */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Позадина на плажа и море */
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, #ff9900, #ff6600); /* Боја на песок */
+    z-index: -1;
+}
+
+/* Повеќе слоеви за море */
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(to bottom, #00bfff, #1e90ff); /* Боја на море */
+    animation: waveAnimation 6s linear infinite; /* Анимација за движење на морето */
+    z-index: -2;
+}
+
+/* Движење на морето (брзо движење) */
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Елемент со сенки и ефекти на песок */
+.sand {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    height: 100px;
+    background: #f4c542; /* Боја на песок */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    z-index: -1;
+}
+
+/* Главен хедер (плажа име или текст) */
+header {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Сенка на текст */
+}
+
+/* Основен текст или содржина */
+.intro {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Сенка на текст */
+}
+
+/* Кнопка за интеракција */
+button {
+    background-color: #ff4081;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #ff80ab;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Додадени сенки и ефекти за морето */
+.wave:before, .wave:after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    width: 150%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: waveMovement 6s ease-in-out infinite;
+}
+
+.wave:before {
+    left: -50%;
+    animation-delay: 2s;
+}
+
+.wave:after {
+    right: -50%;
+    animation-delay: 4s;
+}
+
+/* Анимација за ефекти на морето */
+@keyframes waveMovement {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+/* Основни стилови */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #f9c945; /* Песок боја */
+    position: relative;
+}
+
+/* Позадина на песок со текстура */
+.bg-sand {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.transparenttextures.com/patterns/sandpaper.png'); /* Текстура на песок */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Море - движење на водата */
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, #00bfff, #1e90ff); /* Боја на море */
+    animation: waveAnimation 8s linear infinite; /* Анимација за движење на морето */
+    z-index: -2;
+}
+
+/* Движење на морето */
+@keyframes waveAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Главен хедер */
+header {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 3.5rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Сенка на текст */
+}
+
+/* Содржина */
+.intro {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Сенка на текст */
+}
+
+/* Кнопка за интеракција */
+button {
+    background-color: #ff4081;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 30px;
+}
+
+button:hover {
+    background-color: #ff80ab;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: url('https://applescoop.org/image/wallpapers/iphone/52983290935866703-71037879942803900.jpg') no-repeat center center fixed;
+    background-size: cover;
+    animation: moveWaves 10s linear infinite;
+}
+
+@keyframes moveWaves {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+        .intro img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+        }
+
+
+</style>
+
+
+
+
+        <div class="intro">
+        	ова е хани -->
+            <img src="hani-photo.jfif" alt="Слика на Хани" class="photo">
+</div>
+
+
+
+</body>
+</html>
